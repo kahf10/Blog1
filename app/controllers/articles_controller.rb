@@ -12,12 +12,31 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article  = Article.new(title: "...", body:"...")
+    @article  = Article.new(article_params)
 
-    if @article.after_save
+    if @article.save
       redirect_to @article
     else
       render :new, status: :unprocecessable_entity
     end
   end  
+
+  def edit
+    @article = Article.find(article_params)
+  end
+
+  def update 
+    @article = Article.find(article_params)
+    
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render :edit, status: :unprocecessable_entity
+    end 
+  end
+
+  private 
+    def article_params 
+      params.require(:article).permit(:title, :body)
+    end
 end
