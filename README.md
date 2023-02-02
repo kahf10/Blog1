@@ -16,4 +16,4 @@ The Steps:
 9. While doing this, I added access specifiers to articles so that each article could be classified as either 'public', 'private' or 'archived'. 
 10. I finally added a http authentication whenever a user tries to add an article. 
 
-The name is: "Kahf" and the password is: "Alhomora". 
+* The name is: "Kahf" and the password is: "Alhomora". 
